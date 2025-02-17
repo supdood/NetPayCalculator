@@ -134,5 +134,7 @@ _NCrunch*
 
 #
 
-obj/*
-bin/*
+PayrollSystem/obj/
+PayrollSystem/bin/
+PayrollTests/obj/
+PayrollTests/bin/
