@@ -1,0 +1,24 @@
+{
+    "earnings": [
+      {
+        "code": "overtime",
+        "type": "hourly",
+        "hours": 20,
+        "rate": 15,
+        "isTaxable": true
+      },
+      {
+        "code": "regular",
+        "type": "hourly",
+        "hours": 20,
+        "rate": 13,
+        "isTaxable": false
+      },
+      {
+        "code": "bonus",
+        "type": "salary",
+        "amount": 1500,
+        "isTaxable": true
+      }
+    ]
+  }
