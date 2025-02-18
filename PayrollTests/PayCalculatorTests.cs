@@ -9,7 +9,7 @@ public class PayCalculatorTests
     public void CalculateNetIncomes()
     {
         //Arrange
-        string jsonString = File.ReadAllText("../../../test-cases.json");
+        string jsonString = File.ReadAllText("test-cases.json");
         var testCases = JsonSerializer.Deserialize<TestCases>(jsonString,  new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true

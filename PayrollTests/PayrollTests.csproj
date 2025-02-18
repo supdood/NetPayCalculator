@@ -22,4 +22,10 @@
     <ProjectReference Include="..\PayrollSystem\PayrollSystem.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="test-cases.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
