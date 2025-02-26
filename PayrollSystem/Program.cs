@@ -1,7 +1,6 @@
 ﻿using System.Text.Json;
 using PayrollSystem;
 
-
 string jsonString = File.ReadAllText("input.json");
 Input input = JsonSerializer.Deserialize<Input>(jsonString,  new JsonSerializerOptions
         {
@@ -9,5 +8,3 @@ Input input = JsonSerializer.Deserialize<Input>(jsonString,  new JsonSerializerO
         });
 
 var output = PayCalculator.CalculateNetPay(input);
-
-Console.WriteLine("");

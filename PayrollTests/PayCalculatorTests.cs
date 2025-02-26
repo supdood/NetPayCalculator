@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Runtime.CompilerServices;
+using System.Text.Json;
 using PayrollSystem;
 
 namespace PayrollTests;
@@ -6,7 +7,7 @@ namespace PayrollTests;
 public class PayCalculatorTests
 {
     [Fact]
-    public void CalculateNetIncomes()
+    public void CalculateNetPay_ReturnsExpected()
     {
         //Arrange
         string jsonString = File.ReadAllText("test-cases.json");
@@ -24,7 +25,7 @@ public class PayCalculatorTests
             var actualOutput = PayCalculator.CalculateNetPay(input);
 
             //Assert
-            Assert.Equal(expectedOutput.NetPay, actualOutput.NetPay);
+            Assert.Equal(expectedOutput, actualOutput);
         }
     }
 }

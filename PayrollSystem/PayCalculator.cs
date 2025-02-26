@@ -7,8 +7,8 @@ namespace PayrollSystem
     {
         public static Output CalculateNetPay(Input input)
         {
-            decimal taxableAmount = 0;
-            decimal taxExemptAmount = 0;
+            var taxableAmount = 0M;
+            var taxExemptAmount = 0M;
 
             //Calculate Gross Pay
             foreach(var earning in input.Earnings)
@@ -60,7 +60,7 @@ namespace PayrollSystem
         private static PriorityQueue<Withholding, int> CalculateDeductionWithholdings(decimal taxableIncome, IEnumerable<Deduction> deductions)
         {
 
-            PriorityQueue<Withholding, int> withholdingQueue = new PriorityQueue<Withholding, int>();
+            var withholdingQueue = new PriorityQueue<Withholding, int>();
 
             foreach(Deduction deduction in deductions)
             {
@@ -87,7 +87,7 @@ namespace PayrollSystem
         private static PriorityQueue<Withholding, int> CalculateTaxWithholdings(decimal taxableIncome, IEnumerable<Tax> taxes)
         {
 
-            PriorityQueue<Withholding, int> withholdingQueue = new PriorityQueue<Withholding, int>();
+            var withholdingQueue = new PriorityQueue<Withholding, int>();
 
             foreach(Tax tax in taxes)
             {

@@ -9,14 +9,19 @@ namespace PayrollSystem
 
         public override bool Equals(object? obj)
         {
-            var comparisonOutput = (Output)obj;
+            Output comparisonOutput = obj as Output;
+
+            if (comparisonOutput == null)
+            {
+                return false;
+            }
 
             var grossPayIsEqual = GrossPay == comparisonOutput.GrossPay;
-            var grossTaxableIsEqual = GrossTaxableEarnings == comparisonOutput.GrossPay;
+            var grossTaxableIsEqual = GrossTaxableEarnings == comparisonOutput.GrossTaxableEarnings;
             var netPayIsEqual = NetPay == comparisonOutput.NetPay;
-            var witholdingsIsEqual = Withholdings.Equals(comparisonOutput.Withholdings);
+            var witholdingsIsEqual = Withholdings.SequenceEqual(comparisonOutput.Withholdings);
 
-            return grossPayIsEqual && grossTaxableIsEqual && netPayIsEqual;
+            return grossPayIsEqual && grossTaxableIsEqual && netPayIsEqual && witholdingsIsEqual;
         }
     }
 }
