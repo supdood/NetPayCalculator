@@ -7,7 +7,7 @@ namespace PayrollTests;
 public class PayCalculatorTests
 {
     [Fact]
-    public void CalculateNetPay_ReturnsExpected()
+    public void CalculateNetPay_ReturnsExpectedOutput()
     {
         //Arrange
         string jsonString = File.ReadAllText("test-cases.json");
