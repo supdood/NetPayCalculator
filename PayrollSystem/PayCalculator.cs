@@ -15,11 +15,11 @@ namespace PayrollSystem
             {
                 if(earning.IsTaxable)
                 {
-                    taxableAmount += CalculateGrossPay(earning);
+                    taxableAmount += CalculateEarningAmount(earning);
                 }
                 else
                 {
-                    taxExemptAmount += CalculateGrossPay(earning);
+                    taxExemptAmount += CalculateEarningAmount(earning);
                 }
             }
 
@@ -47,7 +47,7 @@ namespace PayrollSystem
             return new Output { GrossPay = taxableAmount + taxExemptAmount, GrossTaxableEarnings = taxableAmount, Withholdings = allWithholdings, NetPay = netPay };
         }
 
-        private static decimal CalculateGrossPay(Earning earning)
+        private static decimal CalculateEarningAmount(Earning earning)
         {
             if(earning.Type == EarningType.Hourly)
             {
